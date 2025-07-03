@@ -34,6 +34,31 @@ cd hydraHog.exe
 python hydraHog.py
 ```
 
+**Python Requirements:**
+```txt
+pywin32
+```
+
+To install the required dependency:
+```bash
+pip install pywin32
+```
+
+Used Modules:
+```python
+import os
+import ctypes
+import time
+import multiprocessing
+import threading
+import logging
+import random
+import win32con
+import win32gui
+import win32api
+import win32clipboard
+```
+
 ---
 
 ### 🧪 How To Add It to Auto-Start (a.k.a. “How to Haunt Their Reboot”)
@@ -90,7 +115,7 @@ This is not malware. But it sure as hell behaves like one.
 - 🔐 **Use responsibly.**
 - ⚰️ Don’t try this on production machines unless you have a death wish.
 - 👀 It _will_ lag, crash, or force a reboot if left unchecked.  
-- 💡 You **must** run on an admin profile for the BSOD trick to work.
+- 💡 You **must** run as admin for the BSOD trick to work.
 
 ---
 
