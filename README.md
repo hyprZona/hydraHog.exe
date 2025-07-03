@@ -29,6 +29,6 @@
 
 ## ⚙️ Installation
 ```bash
-git clone https://github.com/YOURUSERNAME/hydraHog.exe.git
+git clone https://github.com/hyprZona/hydraHog.exe.git
 cd hydraHog.exe
 python hydraHog.py
