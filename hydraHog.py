@@ -21,7 +21,7 @@ HOTKEY_ID = 1  # CTRL+ALT+P = PANIC button
 
 # ---------------- LOGGING ----------------
 if ENABLE_LOGGING:
-    log_file = os.path.join(os.path.dirname(__file__), 'svchost_log.txt')
+    log_file = os.path.join(os.path.dirname(__file__), 'AgentsofHydra_log.txt')
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(message)s',
