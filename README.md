@@ -1,7 +1,7 @@
 # 🧨 hydraHog.exe  
 ### _Cut one core, two shall rise._  
 
-![hydraHog banner](https://raw.githubusercontent.com/YOURUSERNAME/hydraHog.exe/main/media/banner.png)  
+![hydraHog banner](image.png)  
 
 > ⚠️ **This script is a digital gremlin. It consumes CPU & RAM like your ex eats through your Netflix account. Use it for laughs, memes, or to teach someone humility.**
 
