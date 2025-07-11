@@ -94,14 +94,11 @@ pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 ![hydraHog logo](hydraHog.png)
 
 > Try using a random .ico like:
-
-> - **📝 Notepad**
-  
+> - **📝 Notepad**  
 > - **🧅 Tor Browser**
-  
 > - **🐸 Pepe**
-  
 > - **📀 WinRAR 2002 Edition**
+
   **Confusion = Power.**
 
 ---
@@ -152,9 +149,13 @@ pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 ## 🐗 Final Note and Legal
 
 > This tool is capable enough to *deep fry* your system like **GTA V in 2013**
+
 > We're totally *irresponsible* for **misuse** of this script
+
 > We wouldn't *pay a penny* incase your **system goes R.I.P.**
+
 > Incase of damages:
+
 ![We warned you](https://c.tenor.com/HxESqpMBYt8AAAAd/tenor.gif)
 
 ---
