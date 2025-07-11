@@ -8,10 +8,10 @@
 ---
 
 ## 🤖 What It Actually Does
-- Can **auto-start on boot** (like a digital parasite)^.
+- Can **auto-start on boot** (like a digital parasite)[^1]
 - Slowly chokes **RAM** and **CPU** to near-death (customizable).
 - Spams **fake system alerts** about your potato-tier hardware.
-- After a set time (default: 5 mins), it attempts a **BSOD**^^.
+- After a set time (default: 5 mins), it attempts a **BSOD**[^2]
 - If terminated from Task Manager? It **respawns like it’s in Dragon Ball**.
 
 ---
@@ -160,6 +160,5 @@ pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 
 ---
 
-*`^ Only if the script is added in startup apps`*
-
-*`^^ Only if BSOD Enabled and Script Autokill is disabled`*
+[^1]: Only if the script is added to Startup.
+[^2]: Only if BSOD is enabled and autokill is disabled.
