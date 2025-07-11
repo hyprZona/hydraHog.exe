@@ -103,7 +103,7 @@ pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 
 ---
 
-##🎭 Example Use Cases
+## 🎭 Example Use Cases
 
   - 💾 *Stress-test* a Sony Viao from 2011 (rip).
 
