@@ -161,4 +161,5 @@ pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 ---
 
 *`^ Only if the script is added in startup apps`*
+
 *`^^ Only if BSOD Enabled and Script Autokill is disabled`*
