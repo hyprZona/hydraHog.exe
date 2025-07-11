@@ -22,8 +22,8 @@ except ImportError:
 # ---------------- CONFIGURATION ----------------
 ENABLE_SPLASH_SCREEN = True #optional-splash
 SCRIPT_NAME = "AgentsofHydra"
-RAM_TARGET_PERCENT = 10
-RAM_WORKER_CHUNK_MB = 10
+RAM_TARGET_PERCENT = 1
+RAM_WORKER_CHUNK_MB = 5
 CPU_WORKERS = multiprocessing.cpu_count()
 CRASH_TIMER_MINUTES = 10
 ENABLE_LOGGING = True
