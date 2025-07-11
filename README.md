@@ -1,126 +1,163 @@
-# 💨 hydraHog.exe  
+# 🐗 hydraHog.exe  
 ### _Cut one core, two shall rise._  
 
-![hydraHog banner](image.png)  
+![hydraHog banner](image.png)
 
-> ⚠️ **This script is a digital gremlin. It consumes CPU & RAM like your ex eats through your Netflix account. Use it for laughs, memes, or to teach someone humility.**
+> ⚠️ **This script is a chaotic digital entity. It inhales CPU & RAM like Chrome with 38 tabs and a superiority complex. Use it for mischief, memes, or modern-day justice.**
 
 ---
 
-## 🤖 What It Does
-- Can auto-start on boot (like a clingy ex).
-- Slowly maxes out **RAM** and **CPU** to 99%+ (adjustable).
-- Triggers **fake warning popups** urging for a hardware upgrade.
-- After 5 minutes (or whatever you set it to) of hogging, it attempts a **BSOD** (Windows crash).
-- If you kill it via Task Manager? It **respawns**. Yeah. _Hydra-style._
+## 🤖 What It Actually Does
+- Can **auto-start on boot** (like a digital parasite)^.
+- Slowly chokes **RAM** and **CPU** to near-death (customizable).
+- Spams **fake system alerts** about your potato-tier hardware.
+- After a set time (default: 5 mins), it attempts a **BSOD**^^.
+- If terminated from Task Manager? It **respawns like it’s in Dragon Ball**.
 
 ---
 
 ## 🔥 Features
-| Feature         | Description                                                  |
-|----------------|--------------------------------------------------------------|
-| 📯 RAM Gobbling | Eats memory in chunks and touches it frequently to stay hot |
-| 🔥 CPU Frenzy   | Uses all cores to compute... absolutely nothing              |
-| 🔂 Resurrection | If a process is killed, it comes back. **Always.**           |
-| ⌨️ Hotkey CTRL+ALT+P | Pauses the chaos if you dare                             |
-| 💣 BSOD Timer   | Optional “nuke” timer for full system crash                  |
+| 🔧 Feature         | 💬 Description                                                  |
+|------------------|------------------------------------------------------------------|
+| 📯 RAM Gobbler    | Eats memory in spicy chunks, pings it to avoid garbage collection |
+| 🔥 CPU Overheat   | Multi-core trash compute; fans will start screaming              |
+| 🧟‍♂️ Hydra Mode    | Kills one process? Two respawn. Welcome to pain.                 |
+| ⌨️ Hotkey: CTRL+ALT+P | Pause the hog if things get *too* funny                        |
+| ⌨️ Hotkey: CTRL+ALT+G | A GUI if you're *too* noob for script edits                        |
+| 💣 BSOD Nuke      | Optional system crash after timer. For theatrical exits only.     |
+| 🤡 Fake Popups    | Hardware upgrade messages with all the tact of a phishing scam    |
+| 🦠 hydraHog™ Splash Screen  | Just an ASCII ART :) *(optional)* |
 
 ---
 
-## ⚙️ Installation
+## 🧑‍💻 Installation
 ```bash
 git clone https://github.com/hyprZona/hydraHog.exe.git
 cd hydraHog.exe
 python hydraHog.py
 ```
-
-**Python Requirements:**
-```txt
-pywin32
-```
-
-To install the required dependency:
 ```bash
+Dependencies:
 pip install pywin32
-```
-
 Used Modules:
+```
 ```python
-import os
-import ctypes
-import time
-import multiprocessing
-import threading
-import logging
-import random
-import win32con
-import win32gui
-import win32api
-import win32clipboard
+os, ctypes, time, multiprocessing, threading,
+logging, random, win32con, win32gui,
+win32api, win32clipboard
 ```
 
----
-
-### 🧪 How To Add It to Auto-Start (a.k.a. “How to Haunt Their Reboot”)
-> 💀 _Yes, we’re going full gremlin. No shame._
-
-**Step 1:** Make a shortcut  
-- Right-click `hydraHog.exe` (or `.py` if uncompiled) > **Create Shortcut**
-
-**Step 2:** Toss it into Startup like it owes you RAM  
-- Hit `Win + R` → type `shell:startup` → Enter  
-- Drop that shortcut in the folder that opens.  
-- Done. Welcome to Eternal Boot Lag™.
+> 🧠 Pro Tip: Run it as admin for full features (BSOD won't work otherwise).
 
 ---
 
-### 🛠️ How to Compile It Into a `.exe` with Icon
-> ⚠️ _This is for those who want the full disguise — system process cosplay level._
+## 🧟 Add to Startup (a.k.a. Digital Haunting)
 
-**Step 1:** Install `pyinstaller`
+> Be the reason someone fears restarting their PC.
+
+### 1. Create Shortcut
+
+  - Right-click the script or .exe → "Create Shortcut"
+
+### 2. Drop it in Startup
+
+  - Press Win + R, type: shell:startup, hit Enter
+  
+  - Paste the shortcut there.
+  
+  - Boom. Eternal torment initiated.
+
+---
+
+## 🛠️ Compile to .exe (Disguise Level: Government Software)
+Wanna prank like a pro? Here’s how to make it look official:
+
+### 1. Install PyInstaller
 ```bash
 pip install pyinstaller
 ```
-
-**Step 2:** Build your imposter `.exe`
+### 2. Build it
 ```bash
 pyinstaller --noconfirm --onefile --windowed --icon=youricon.ico hydraHog.py
 ```
-
-- `--windowed` = No ugly terminal popping up.
-- `--icon` = Use your custom `.ico` (like our HydraHog parody logo).
-- `--onefile` = Single `.exe` output. Clean and deployable.
-
-**Step 3:** Find your `.exe` in the `dist/` folder. Toss it into Startup as explained earlier. Set. Trap. Laugh.
-
----
-
-### 📆 Recommended Icon (Optional but hilarious)
-![hydraHog Icon](hydraHog.png)  
-> Or use anything dumb. Like a Notepad icon. Or Shrek. Confuse. Always confuse.
+  - --windowed: Hides terminal window (stealth mode)
+  
+  - --icon: Confuse them with a Notepad icon or something cursed (you can download and use the icon in the repo)
+  
+  - --onefile: Clean single .exe output
+### 3. Copy the .exe from the dist/ folder and drop it into Startup for maximum chaos.
 
 ---
 
-### 💨 Example Use Cases
-- 🤪 _Stress test_ a laptop from 2009 (it will scream).
-- 🧠 _Psychological warfare_ against a coworker.
-- 🎉 _April Fools_, any day of the year.
-- 💻 _Teach_ your little sibling humility for installing Chrome extensions like it's candy.
+## 🖼️ Icon Recommendation (aka “Meme Fuel”)
+
+![hydraHog logo](hydraHog.png)
+
+> Try using a random .ico like:
+
+> - **📝 Notepad**
+  
+> - **🧅 Tor Browser**
+  
+> - **🐸 Pepe**
+  
+> - **📀 WinRAR 2002 Edition**
+  **Confusion = Power.**
 
 ---
 
-### 🙈 Warning
-This is not malware. But it sure as hell behaves like one.
+##🎭 Example Use Cases
 
-- 🔐 **Use responsibly.**
-- ⚰️ Don’t try this on production machines unless you have a death wish.
-- 👀 It _will_ lag, crash, or force a reboot if left unchecked.  
-- 💡 You **must** run as admin for the BSOD trick to work.
+  - 💾 *Stress-test* a Sony Viao from 2011 (rip).
+
+  - 🤝 *Office warfare* against a dev who still uses IE11.
+
+  - 🤡 *April Fools*, but every time they reboot.
+
+  - 🧠 *Teach humility* to that friend who thinks 4GB RAM is “plenty.”
+
+---
+
+## ❗ Warnings (Read this or suffer)
+  - ❌ This is not a virus, but Windows *might* disagree.
+
+  - 💣 Will hog resources to the edge of a breakdown. It’s the point.
+
+  - 🔐 Requires admin for BSOD powers.
+
+  - 🧯 Not meant for production systems. Unless you’re quitting that job anyway.
+
+  - 😇 Use responsibly. Or at least creatively.
 
 ---
 
-### 🤝 Credits
-- Built by [hyprZona](https://github.com/hyprZona) aka dVlpr — bringing digital chaos one fork at a time.
-- Inspired by the sheer audacity of old RAM-hogging Flash games and your grandma’s Vista.
+## 🕵️ Hotkeys
+
+| Combo            | Effect                           |
+| ---------------- | -------------------------------- |
+| `CTRL + ALT + P` | Pause / resume the chaos         |
+| `CTRL + ALT + G`       | For hacking vibes |
 
 ---
+
+## 🤝 Credits
+  - Brought to life by [dVlpr](https://github.com/hyprZona)
+
+  - Fueled by caffeine, spite, and memories of Internet Explorer
+
+  - Inspired by the RAM demons of Flash game days and that one cousin who installed 12 antiviruses
+
+---
+
+## 🐗 Final Note and Legal
+
+> This tool is capable enough to *deep fry* your system like **GTA V in 2013**
+> We're totally *irresponsible* for **misuse** of this script
+> We wouldn't *pay a penny* incase your **system goes R.I.P.**
+> Incase of damages:
+![We warned you](https://c.tenor.com/HxESqpMBYt8AAAAd/tenor.gif)
+
+---
+
+*`^ Only if the script is added in startup apps`*
+*`^^ Only if BSOD Enabled and Script Autokill is disabled`*
