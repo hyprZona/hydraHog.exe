@@ -24,7 +24,7 @@
 | 🧟‍♂️ Hydra Mode        | Kills one? Two return. You’re not ready.                         |
 | ⌨️ CTRL+ALT+P        | Pause the chaos if you get cold feet.                             |
 | ⌨️ CTRL+ALT+G        | Launches GUI. Because real hackers click buttons too.             |
-| 💣 BSOD Nuke         | Triggers a fake crash. Dramatic exits, anyone?                    |
+| 💣 BSOD Nuke         | Triggers an actual crash. Dramatic exits, anyone?                    |
 | 🤡 Fake Popups       | Passive-aggressive nags about your “hardware.”                    |
 | 🦠 Splash Screen     | ASCII logo that screams cursed retro vibes. Optional but iconic.  |
 
