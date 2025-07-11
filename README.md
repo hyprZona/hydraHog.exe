@@ -17,16 +17,16 @@
 ---
 
 ## 🔥 Features
-| 🔧 Feature         | 💬 Description                                                  |
-|------------------|------------------------------------------------------------------|
-| 📯 RAM Gobbler    | Eats memory in spicy chunks, pings it to avoid garbage collection |
-| 🔥 CPU Overheat   | Multi-core trash compute; fans will start screaming              |
-| 🧟‍♂️ Hydra Mode    | Kills one process? Two respawn. Welcome to pain.                 |
-| ⌨️ Hotkey: CTRL+ALT+P | Pause the hog if things get *too* funny                        |
-| ⌨️ Hotkey: CTRL+ALT+G | A GUI if you're *too* noob for script edits                        |
-| 💣 BSOD Nuke      | Optional system crash after timer. For theatrical exits only.     |
-| 🤡 Fake Popups    | Hardware upgrade messages with all the tact of a phishing scam    |
-| 🦠 hydraHog™ Splash Screen  | Just an ASCII ART :) *(optional)* |
+| 🔧 Feature           | 💬 Description                                                    |
+|---------------------|--------------------------------------------------------------------|
+| 📯 RAM Gobbler       | Eats memory like it’s on a cheat day.                             |
+| 🔥 CPU Overheat      | Your fans will beg for mercy.                                     |
+| 🧟‍♂️ Hydra Mode        | Kills one? Two return. You’re not ready.                         |
+| ⌨️ CTRL+ALT+P        | Pause the chaos if you get cold feet.                             |
+| ⌨️ CTRL+ALT+G        | Launches GUI. Because real hackers click buttons too.             |
+| 💣 BSOD Nuke         | Triggers a fake crash. Dramatic exits, anyone?                    |
+| 🤡 Fake Popups       | Passive-aggressive nags about your “hardware.”                    |
+| 🦠 Splash Screen     | ASCII logo that screams cursed retro vibes. Optional but iconic.  |
 
 ---
 
@@ -36,11 +36,11 @@ git clone https://github.com/hyprZona/hydraHog.exe.git
 cd hydraHog.exe
 python hydraHog.py
 ```
+### Dependencies:
 ```bash
-Dependencies:
 pip install pywin32
-Used Modules:
 ```
+### Used Modules:
 ```python
 os, ctypes, time, multiprocessing, threading,
 logging, random, win32con, win32gui,
